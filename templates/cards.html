@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-Cards page.
+{% for card, data in cards.items() %}
+{% include 'card.html' %}
+{% endfor %}
 {% endblock %}
