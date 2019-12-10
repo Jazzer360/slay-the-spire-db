@@ -1,0 +1,64 @@
+####################
+#  Ironclad Cards  #
+####################
+
+# Starter #
+
+Bash: {
+  color: red,
+  cost: 2,
+  rarity: starter,
+  text: "Deal (8|10) damage.\nApply (2|3) Vulnerable.",
+  type: attack,
+  keywords: [vulnerable]
+}
+
+Defend: {
+  color: red,
+  cost: 1,
+  rarity: starter,
+  text: "Gain (5|8) Block.",
+  type: skill,
+  keywords: [block]
+}
+
+Strike: {
+  color: red,
+  cost: 1,
+  rarity: starter,
+  text: "Deal (6|9) damage.",
+  type: attack,
+  keywords:
+}
+
+# Common #
+
+Anger: {
+  color: red,
+  cost: 0,
+  rarity: common,
+  text: "Deal (6|8) damage.\n
+        Add a copy of this card into your discard pile.",
+  type: attack,
+  keywords: 
+}
+
+Armaments: {
+  color: red,
+  cost: 1,
+  rarity: common,
+  text: "Gain 5 Block.\n
+        Upgrade (a card|all cards) in your hand for the rest of combat.",
+  type: skill,
+  keywords: [upgrade]
+}
+
+Body Slam: {
+  color: red,
+  cost: (1|0),
+  rarity: common,
+  text: "Deal damage equal to your Block.",
+  type: attack,
+  keywords: [block]
+}
+
