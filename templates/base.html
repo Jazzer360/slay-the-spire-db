@@ -1,0 +1,30 @@
+{% macro glyph(name) %}<i class="fas fa-{{ name }}"></i>{% endmacro %}
+{% macro glyphr(name) %}<i class="far fa-{{ name }}"></i>{% endmacro %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include 'tag-manager.html' %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="Description" content="{% block desc %}{% endblock %}">
+  <link rel="icon" type="image/png" href="{{ res('/images/favicon.ico') }}" />
+  {% include 'bootstrap.html' %}
+  {% include 'font-awesome.html' %}
+  <link href="{{ res('/css/main.min.css') }}" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Viga|Roboto" rel="stylesheet" type="text/css">
+  <title>{% block title %}SpireDB{% endblock %}</title>
+</head>
+<body>
+{% include 'tag-manager-body.html' %}
+<div class="container">
+{% set active_path = path %}
+{% include 'header.html' %}
+{% block content %}
+{% endblock %}
+{% include 'footer.html' %}
+</div>
+{% include 'bootstrap-scripts.html' %}
+{% block script %}
+{% endblock %}
+</body>
+</html>
