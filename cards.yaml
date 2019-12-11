@@ -10,7 +10,7 @@ Bash: {
   rarity: starter,
   text: "Deal (8|10) damage.\nApply (2|3) Vulnerable.",
   type: attack,
-  keywords: [vulnerable]
+  keywords: [damage, vulnerable]
 }
 
 Defend: {
@@ -28,7 +28,7 @@ Strike: {
   rarity: starter,
   text: "Deal (6|9) damage.",
   type: attack,
-  keywords:
+  keywords: [damage]
 }
 
 # Common #
@@ -37,20 +37,18 @@ Anger: {
   color: red,
   cost: 0,
   rarity: common,
-  text: "Deal (6|8) damage.\n
-        Add a copy of this card into your discard pile.",
+  text: "Deal (6|8) damage.\nAdd a copy of this card into your discard pile.",
   type: attack,
-  keywords: 
+  keywords: [damage]
 }
 
 Armaments: {
   color: red,
   cost: 1,
   rarity: common,
-  text: "Gain 5 Block.\n
-        Upgrade (a card|all cards) in your hand for the rest of combat.",
+  text: "Gain 5 Block.\nUpgrade a(|ll) card(|s) in your hand for the rest of combat.",
   type: skill,
-  keywords: [upgrade]
+  keywords: [upgrade, block]
 }
 
 Body Slam: {
@@ -59,6 +57,630 @@ Body Slam: {
   rarity: common,
   text: "Deal damage equal to your Block.",
   type: attack,
+  keywords: [damage, block]
+}
+
+Clash: {
+  color: red,
+  cost: 0,
+  rarity: common,
+  text: "Can only be played if every card in your hand is an Attack.\nDeal (14|18) damage.",
+  type: attack,
+  keywords: [damage]
+}
+
+Cleave: {
+  color: red,
+  cost: 1,
+  rarity: common,
+  text: "Deal (8|11) damage to ALL enemies.",
+  type: attack,
+  keywords: [damage, aoe]
+}
+
+Clothesline: {
+  color: red,
+  cost: 2,
+  rarity: common,
+  text: "Deal (12|14) damage.\nApply (2|3) Weak.",
+  type: attack,
+  keywords: [damage, weak]
+}
+
+Flex: {
+  color: red,
+  cost: 0,
+  rarity: common,
+  text: "Gain (2|4) Strength.\nAt the end of this turn, lose (2|4) Strength.",
+  type: skill,
+  keywords: [strength]
+}
+
+Havoc: {
+  color: red,
+  cost: (1|0),
+  rarity: common,
+  text: "Play the top card of your draw pile and Exhaust it.",
+  type: skill,
+  keywords: [exhaust, draw]
+}
+
+Headbutt: {
+  color: red,
+  cost: 1,
+  rarity: common,
+  text: "Deal (9|12) damage.\nPut a card from your discard pile on top of your draw pile.",
+  type: attack,
+  keywords: [damage, seek, manipulation]
+}
+
+Heavy Blade: {
+  color: red,
+  cost: 2,
+  rarity: common,
+  text: "Deal 14 damage.\nStrength affects this card (3|5) times.",
+  type: attack,
+  keywords: [damage, strength]
+}
+
+Iron Wave: {
+  color: red,
+  cost: 1,
+  rarity: common,
+  text: "Gain (5|7) Block.\nDeal (5|7) damage.",
+  type: attack,
   keywords: [block]
 }
 
+Perfected Strike: {
+  color: red,
+  cost: 2,
+  rarity: common,
+  text: "Deal 6 damage.\nDeals (2|3) additional damage for ALL your cards containing \"Strike\".",
+  type: attack,
+  keywords: [damage]
+}
+
+Pommel Strike: {
+  color: red,
+  cost: 1,
+  rarity: common,
+  text: "Deal (9|10) damage.\nDraw (1|2) card(|s).",
+  type: attack,
+  keywords: [damage, draw]
+}
+
+Shrug It Off: {
+  color: red,
+  cost: 1,
+  rarity: common,
+  text: "Gain (8|11) Block.\nDraw 1 card.",
+  type: skill,
+  keywords: [block, draw]
+}
+
+Sword Boomerang: {
+  color: red,
+  cost: 1,
+  rarity: common,
+  text: "Deal 3 damage to a random enemy (3|4) times.",
+  type: attack,
+  keywords: [damage, multi-attack, random]
+}
+
+Thunderclap: {
+  color: red,
+  cost: 1,
+  rarity: common,
+  text: "Deal (4|7) damage and apply 1 Vulnerable to ALL enemies.",
+  type: attack,
+  keywords: [damage, aoe, vulnerable]
+}
+
+True Grit: {
+  color: red,
+  cost: 1,
+  rarity: common,
+  text: "Gain (7|9) Block.\nExhaust 1 card(| at random).",
+  type: skill,
+  keywords: [block, exhaust, random]
+}
+
+Twin Strike: {
+  color: red,
+  cost: 1,
+  rarity: common,
+  text: "Deal (5|7) damage twice.",
+  type: attack,
+  keywords: [damage, multi-attack]
+}
+
+Warcry: {
+  color: red,
+  cost: 0,
+  rarity: common,
+  text: "Draw (1|2) card(|s).\nPut a card from your hand onto the top of your draw pile.\nExhaust.",
+  type: skill,
+  keywords: [draw, exhaust, manipulation]
+}
+
+Wild Strike: {
+  color: red,
+  cost: 1,
+  rarity: common,
+  text: "Deal (12|17) damage.\nShuffle a Wound into your draw pile.",
+  type: attack,
+  keywords: [damage, wound, shuffle, status]
+}
+
+# Uncommon #
+
+Battle Trance: {
+  color: red,
+  cost: 0,
+  rarity: uncommon,
+  text: "Draw (3|4) cards.\nYou cannot draw additional cards this turn.",
+  type: skill,
+  keywords: [draw]
+}
+
+Blood for Blood: {
+  color: red,
+  cost: (4|3),
+  rarity: uncommon,
+  text: "Costs 1 less [red orb] for each time you lose HP this combat.\nDeal (18|22) damage.",
+  type: attack,
+  keywords: [damage]
+}
+
+Bloodletting: {
+  color: red,
+  cost: 0,
+  rarity: uncommon,
+  text: "Lose 3 HP.\nGain [red orb](|[red orb]).",
+  type: skill,
+  keywords: [energy, self-harm]
+}
+
+Burning Pact: {
+  color: red,
+  cost: 1,
+  rarity: uncommon,
+  text: "Exhaust 1 card.\nDraw (2|3) cards.",
+  type: skill,
+  keywords: [draw, exhaust]
+}
+
+Carnage: {
+  color: red,
+  cost: 2,
+  rarity: uncommon,
+  text: "Ethereal.\nDeal (20|28) damage.",
+  type: attack,
+  keywords: [damage, ethereal]
+}
+
+Combust: {
+  color: red,
+  cost: 1,
+  rarity: uncommon,
+  text: "At the end of your turn, lose 1 HP and deal (5|7) damage to ALL enemies.",
+  type: power,
+  keywords: [damage, aoe, self-harm]
+}
+
+Dark Embrace: {
+  color: red,
+  cost: (2|1),
+  rarity: uncommon,
+  text: "Whenever a card is Exhausted, draw 1 card.",
+  type: power,
+  kewords: [exhaust, draw]
+}
+
+Disarm: {
+  color: red,
+  cost: 1,
+  rarity: uncommon,
+  text: "Enemy loses (2|3) Strength.\nExhaust.",
+  type: skill,
+  keywords: [debuff-strength, exhaust]
+}
+
+Dropkick: {
+  color: red,
+  cost: 1,
+  rarity: uncommon,
+  text: "Deal (5|8) damage.\nIf the enemy has Vulnerable, gain [red orb] and draw 1 card.",
+  type: attack,
+  keywords: [damage, vulnerable, draw, energy]
+}
+
+Dual Wield: {
+  color: red,
+  cost: 1,
+  rarity: uncommon,
+  text: "Choose an Attack or Power card. Add (a|2) cop(y|ies) of that card into your hand.",
+  type: skill,
+  keywords: [copy]
+}
+
+Entrench: {
+  color: red,
+  cost: (2|1),
+  rarity: uncommon,
+  text: "Double your Block.",
+  type: skill,
+  keywords: [block]
+}
+
+Evolve: {
+  color: red,
+  cost: 1,
+  rarity: uncommon,
+  text: "Whenever you draw a Status card, draw (1|2) card(|s).",
+  type: power,
+  keywords: [status, draw]
+}
+
+Feel No Pain: {
+  color: red,
+  cost: 1,
+  rarity: uncommon,
+  text: "Whenever a card is Exhausted, gain (3|4) Block.",
+  type: power,
+  keywords: [block, exhaust]
+}
+
+Fire Breathing: {
+  color: red,
+  cost: 1,
+  rarity: uncommon,
+  text: "Whenever you draw a Status or Curse card, deal (6|10) damage to ALL enemies.",
+  type: power,
+  keywords: [status, curse, damage]
+}
+
+Flame Barrier: {
+  color: red,
+  cost: 2,
+  rarity: uncommon,
+  text: "Gain (12|16) Block.\nWhenever you are attacked this turn, deal (4|6) damage back.",
+  type: skill,
+  keywords: [block, thorns]
+}
+
+Ghostly Armor: {
+  color: red,
+  cost: 1,
+  rarity: uncommon,
+  text: "Ethereal.\nGain (10|13) Block.",
+  type: skill,
+  keywords: [ethereal, block]
+}
+
+Hemokinesis: {
+  color: red,
+  cost: 1,
+  rarity: uncommon,
+  text: "Lose (3|2) HP.\nDeal (14|18) damage.",
+  type: attack,
+  keywords: [damage, self-harm]
+}
+
+Infernal Blade: {
+  color: red,
+  cost: (1|0),
+  rarity: uncommon,
+  text: "Add a random Attack into your hand.\nIt costs 0 this turn.\nExhaust.",
+  type: skill,
+  keywords: [exhaust, random]
+}
+
+Inflame: {
+  color: red,
+  cost: 1,
+  rarity: uncommon,
+  text: "Gain (2|3) Strength.",
+  type: power,
+  keywords: [strength]
+}
+
+Intimidate: {
+  color: red,
+  cost: 0,
+  rarity: uncommon,
+  text: "Apply (1|2) Weak to ALL enemies.\nExhaust.",
+  type: skill,
+  keywords: [weak, exhaust]
+}
+
+Metallicize: {
+  color: red,
+  cost: 1,
+  rarity: uncommon,
+  text: "At the end of your turn, gain (3|4) Block.",
+  type: power,
+  keywords: [block]
+}
+
+Power Through: {
+  color: red,
+  cost: 1,
+  rarity: uncommon,
+  text: "Add 2 Wounds into your hand.\nGain (15|20) Block.",
+  type: skill,
+  keywords: [wound, block, status]
+}
+
+Pummel: {
+  color: red,
+  cost: 1,
+  rarity: uncommon,
+  text: "Deal 2 damage (4|5) times.\nExhaust.",
+  type: attack,
+  keywords: [exhaust, damage, multi-attack]
+}
+
+Rage: {
+  color: red,
+  cost: 0,
+  rarity: uncommon,
+  text: "Whenever you play an Attack this turn, gain (3|5) Block.",
+  type: skill,
+  keywords: [block]
+}
+
+Rampage: {
+  color: red,
+  cost: 1,
+  rarity: uncommon,
+  text: "Deal 8 damage.\nIncrease this card's damage by (5|8) this combat.",
+  type: attack,
+  keywords: [damage]
+}
+
+Reckless Charge: {
+  color: red,
+  cost: 0,
+  rarity: uncommon,
+  text: "Deal (7|10) damage.\nShuffle a Dazed into your draw pile.",
+  type: attack,
+  keywords: [daze, status]
+}
+
+Rupture: {
+  color: red,
+  cost: (1|0),
+  rarity: uncommon,
+  text: "Whenever you lose HP from a card, gain 1 Strength.",
+  type: power,
+  keywords: [strength, self-harm]
+}
+
+Searing Blow: {
+  color: red,
+  cost: 2,
+  rarity: uncommon,
+  text: "Deal (12|16) damage.\nCan be Upgraded any number of times.",
+  type: attack,
+  keywords: [damage, upgrade]
+}
+
+Second Wind: {
+  color: red,
+  cost: 1,
+  rarity: uncommon,
+  text: "Exhaust all non-Attack cards in your hand.\nGain (5|7) Block for each card Exhausted.",
+  type: skill,
+  keywords: [block, exhaust]
+}
+
+Seeing Red: {
+  color: red,
+  cost: (1|0),
+  rarity: uncommon,
+  text: "Gain [red orb][red orb].\nExhaust.",
+  type: skill,
+  keywords: [exhaust, energy]
+}
+
+Sentinel: {
+  color: red,
+  cost: 1,
+  rarity: uncommon,
+  text: "Gain (5|8) Block.\nIf this card is Exhausted, gain [red orb][red orb](|[red orb]).",
+  type: skill,
+  keywords: [block, exhaust, energy]
+}
+
+Sever Soul: {
+  color: red,
+  cost: 2,
+  rarity: uncommon,
+  text: "Exhaust all non-Attack cards in your hand.\nDeal (16|22) damage.",
+  type: attack,
+  keywords: [damage, exhaust]
+}
+
+Shockwave: {
+  color: red,
+  cost: 2,
+  rarity: uncommon,
+  text: "Apply (3|5) Weak and Vulnerable to ALL enemies.\nExhaust.",
+  type: skill,
+  keywords: [weak, vulnerable, exhaust]
+}
+
+Spot Weakness: {
+  color: red,
+  cost: 1,
+  rarity: uncommon,
+  text: "If the enemy intends to attack, gain (3|4) Strength.",
+  type: skill,
+  keywords: [strength]
+}
+
+Uppercut: {
+  color: red,
+  cost: 2,
+  rarity: uncommon,
+  text: "Deal 13 damage.\nApply (1|2) Weak.\nApply (1|2) Vulnerable.",
+  type: attack,
+  keywords: [weak, vulnerable, damage]
+}
+
+Whirlwind: {
+  color: red,
+  cost: X,
+  rarity: uncommon,
+  text: "Deal (5|8) damage to ALL enemies X times.",
+  type: attack,
+  keywords: [damage, aoe]
+}
+
+# Rare #
+
+Barricade: {
+  color: red,
+  cost: (3|2),
+  rarity: rare,
+  text: "Block is not removed at the start of your turn.",
+  type: power,
+  keywords: [block]
+}
+
+Berserk: {
+  color: red,
+  cost: 0,
+  rarity: rare,
+  text: "Gain (2|1) Vulnerable.\nAt the start of your turn, gain [red orb].",
+  type: power,
+  keywords: [energy, self-debuff]
+}
+
+Bludgeon: {
+  color: red,
+  cost: 3,
+  rarity: rare,
+  text: "Deal (32|42) damage.",
+  type: attack,
+  keywords: [damage]
+}
+
+Brutality: {
+  color: red,
+  cost: 0,
+  rarity: rare,
+  text: "(|Innate.\n)At the start of your turn, lose 1 HP and draw 1 card.",
+  type: power,
+  keywords: [self-harm, draw]
+}
+
+Corruption: {
+  color: red,
+  cost: (3|2),
+  rarity: rare,
+  text: "Skills cost 0.\nWhenever you play a Skill, Exhaust it.",
+  type: power,
+  keywords: [exhaust]
+}
+
+Demon Form: {
+  color: red,
+  cost: 3,
+  rarity: rare,
+  text: "At the start of your turn, gain (2|3) Strength.",
+  type: power,
+  keywords: [strength]
+}
+
+Double Tap: {
+  color: red,
+  cost: 1,
+  rarity: rare,
+  text: "This turn, your next(| 2) Attack(|s) (is|are) played twice.",
+  type: skill,
+  keywords: []
+}
+
+Exhume: {
+  color: red,
+  cost: (1|0),
+  rarity: rare,
+  text: "Put a card from your exhaust pile into your hand.\nExhaust.",
+  type: skill,
+  keywords: [exhaust, seek]
+}
+
+Feed: {
+  color: red,
+  cost: 1,
+  rarity: rare,
+  text: "Deal (10|12) damage.\nIf Fatal, raise your Max HP by (3|4).\nExhaust.",
+  type: attack,
+  keywords: [heal, exhaust, damage, max-hp]
+}
+
+Fiend Fire: {
+  color: red,
+  cost: 2,
+  rarity: rare,
+  text: "Exhaust your hand.\nDeal (7|10) damage for each card Exhausted.\nExhaust.",
+  type: attack,
+  keywords: [damage, multi-attack, exhaust]
+}
+
+Immolate: {
+  color: red,
+  cost: 2,
+  rarity: rare,
+  text: "Deal (21|28) damage to ALL enemies.\nAdd a Burn into your discard pile.",
+  type: attack,
+  keywords: [status, burn, aoe, damage]
+}
+
+Impervious: {
+  color: red,
+  cost: 2,
+  rarity: rare,
+  text: "Gain (30|40) Block.\nExhaust.",
+  type: skill,
+  keywords: [block, exhaust]
+}
+
+Juggernaut: {
+  color: red,
+  cost: 2,
+  rarity: rare,
+  text: "Whenever you gain Block, deal (5|7) damage to a random enemy.",
+  type: power,
+  keywords: [block, damage, random]
+}
+
+Limit Break: {
+  color: red,
+  cost: 1,
+  rarity: rare,
+  text: "Double your Strength.(\nExhaust.|)",
+  type: skill,
+  keywords: [exhaust, strength]
+}
+
+Offering: {
+  color: red,
+  cost: 0,
+  rarity: rare,
+  text: "Lose 6 HP.\nGain [red orb][red orb].\nDraw (3|5) cards.\nExhaust.",
+  type: skill,
+  keywords: [self-harm, energy, draw, exhaust]
+}
+
+Reaper: {
+  color: red,
+  cost: 2,
+  rarity: rare,
+  text: "Deal (4|5) damage to ALL enemies. Heal HP equal to unblocked damage.\nExhaust.",
+  type: attack,
+  keywords: [heal, aoe, exhaust, damage]
+}

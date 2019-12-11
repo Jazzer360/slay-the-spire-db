@@ -1,4 +1,4 @@
-<div class="spirecard">
+<div class="spirecard {{ data.rarity }} {{ data.type }} {{ ' '.join(data.keywords) }}">
   <img class="cardbg" src="{{ data|bg_img }}"/>
   {% if data.cost is not none %}
   <img class="orb" src="{{ data|orb_img }}"/>
@@ -6,4 +6,8 @@
   <img class="banner" src="{{ data|banner_img }}"/>
   <img class="frame" src="{{ data|frame_img }}"/>
   <img class="icon" src="{{ data|card_img(card) }}">
+  <div class="cost"><p>{{ data.cost|card_text }}</p></div>
+  <div class="name"><p>{{ card|card_name }}</p></div>
+  <div class="text"><p>{{ data.text|card_text }}</p></div>
+  <div class="type"></div>
 </div>

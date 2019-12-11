@@ -1,6 +1,11 @@
+import re
+
 from jinja2 import Environment, FileSystemLoader
 from yaml import load
 import sass
+
+
+UP_REGEX = re.compile(r"\(([^\|]*)\|([^\)]*)\)")
 
 
 def bg_img(data):
@@ -33,13 +38,21 @@ def frame_img(data):
 
 
 def card_img(data, name):
-    name = name.replace('\'', '').replace(' ', '_')
+    name = name.replace("'", '').replace(' ', '_').lower()
     if data['type'] == 'curse':
         return '/images/curse/{name}.png'
     elif data['type'] == 'status':
         return '/images/status/{name}.png'
     else:
         return f"/images/{data['color']}/{data['type']}/{name}.png"
+
+
+def process_text(cost):
+    pass
+
+
+def card_name(name):
+    pass
 
 
 env = Environment(trim_blocks=True,
@@ -50,6 +63,9 @@ env.filters['orb_img'] = orb_img
 env.filters['banner_img'] = banner_img
 env.filters['frame_img'] = frame_img
 env.filters['card_img'] = card_img
+env.filters['card_text'] = process_text
+env.filters['card_name'] = card_name
+env.filters['titlecase'] = lambda x: x.title()
 
 
 with open('cards.yaml') as f:
