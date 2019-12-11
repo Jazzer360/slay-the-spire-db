@@ -2,9 +2,55 @@ from jinja2 import Environment, FileSystemLoader
 from yaml import load
 import sass
 
+
+def bg_img(data):
+    if data['type'] == 'curse':
+        return '/images/bg_skill_black.png'
+    elif data['type'] == 'status':
+        return '/images/bg_skill_colorless.png'
+    else:
+        return f"/images/bg_{data['type']}_{data['color']}.png"
+
+
+def orb_img(data):
+    return f"/images/card_{data['color']}_orb.png"
+
+
+def banner_img(data):
+    if data['rarity'] is None or data['rarity'] == 'starter':
+        return '/images/banner_common.png'
+    else:
+        return f"/images/banner_{data['rarity']}.png"
+
+
+def frame_img(data):
+    if data['rarity'] is None:
+        return '/images/frame_attack_common.png'
+    if data['rarity'] == 'starter':
+        return f"/images/frame_{data['type']}_common.png"
+    else:
+        return f"/images/frame_{data['type']}_{data['rarity']}.png"
+
+
+def card_img(data, name):
+    name = name.replace('\'', '').replace(' ', '_')
+    if data['type'] == 'curse':
+        return '/images/curse/{name}.png'
+    elif data['type'] == 'status':
+        return '/images/status/{name}.png'
+    else:
+        return f"/images/{data['color']}/{data['type']}/{name}.png"
+
+
 env = Environment(trim_blocks=True,
                   lstrip_blocks=True,
                   loader=FileSystemLoader('templates'))
+env.filters['bg_img'] = bg_img
+env.filters['orb_img'] = orb_img
+env.filters['banner_img'] = banner_img
+env.filters['frame_img'] = frame_img
+env.filters['card_img'] = card_img
+
 
 with open('cards.yaml') as f:
     cards = load(f)

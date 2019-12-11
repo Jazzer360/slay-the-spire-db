@@ -1,3 +1,9 @@
-{{ card }}
-{{ data.text }}
-<div class="card {{ ' '.join((data.color, data.rarity, data.type)) }}"></div>
+<div class="spirecard">
+  <img class="cardbg" src="{{ data|bg_img }}"/>
+  {% if data.cost is not none %}
+  <img class="orb" src="{{ data|orb_img }}"/>
+  {% endif %}
+  <img class="banner" src="{{ data|banner_img }}"/>
+  <img class="frame" src="{{ data|frame_img }}"/>
+  <img class="icon" src="{{ data|card_img(card) }}">
+</div>

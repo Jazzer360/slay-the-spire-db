@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-{% for card, data in cards.items() %}
-{% include 'card.html' %}
-{% endfor %}
+<div class="row row-cols-4">
+  {% for card, data in cards.items() %}
+  <div class="col">
+  {% include 'card.html' %}
+  </div>
+  {% endfor %}
+</div>
 {% endblock %}
