@@ -6,8 +6,8 @@
   <img class="banner" src="{{ data|banner_img }}"/>
   <img class="frame" src="{{ data|frame_img }}"/>
   <img class="icon" src="{{ data|card_img(card) }}">
-  <div class="cost"><p>{{ data.cost|card_text }}</p></div>
-  <div class="name"><p>{{ card|card_name }}</p></div>
-  <div class="text"><p>{{ data.text|card_text }}</p></div>
-  <div class="type"></div>
+  {% include 'card-text.html' %}
+  <!-- <p class="cost">{{ data.cost|card_text }}</p> -->
+  <!-- <p class="text">{{ data.text|card_text }}</p> -->
+  <!-- <p class="type">{{ data.type|titlecase }}</p> -->
 </div>

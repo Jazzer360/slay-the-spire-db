@@ -51,8 +51,14 @@ def process_text(cost):
     pass
 
 
-def card_name(name):
-    pass
+def process_cost(cost):
+    if isinstance(cost, int) or cost == 'X':
+        return cost
+    else:
+        return f"""
+            <tspan class="base">{cost[1]}</tspan>
+            <tspan class="plus">{cost[3]}</tspan>
+        """
 
 
 env = Environment(trim_blocks=True,
@@ -64,7 +70,7 @@ env.filters['banner_img'] = banner_img
 env.filters['frame_img'] = frame_img
 env.filters['card_img'] = card_img
 env.filters['card_text'] = process_text
-env.filters['card_name'] = card_name
+env.filters['card_cost'] = process_cost
 env.filters['titlecase'] = lambda x: x.title()
 
 

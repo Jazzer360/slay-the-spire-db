@@ -1,0 +1,13 @@
+<svg>
+  <defs>
+    <filter id="name-filter">
+      <feDropShadow flood-color="#000" flood-opacity=".2" dx="2" dy="2" stdDeviation="0" />
+    </filter>
+  </defs>
+  <text x="50%" y="10.5%" class="name" filter="url(#name-filter)">
+    {{ card }}<tspan class="plus">+</tspan>
+  </text>
+  <text x="4.5%" y="7.5%" class="cost">
+    {{ data.cost|card_cost }}
+  </text>
+</svg>
