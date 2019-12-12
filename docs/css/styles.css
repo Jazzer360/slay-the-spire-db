@@ -79,3 +79,16 @@ body {
 .upgraded .cost .plus, .upgraded .name {
   fill: #7FFF00;
   stroke: #2C5900; }
+
+.type {
+  top: 52.5%;
+  width: 100%;
+  font-weight: 800;
+  color: #595959;
+  font-size: 11px;
+  text-align: center;
+  z-index: 10; }
+  .skill .type {
+    top: 53%; }
+  .power .type {
+    top: 52%; }
