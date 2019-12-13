@@ -4,8 +4,24 @@ from jinja2 import Environment, FileSystemLoader
 from yaml import load
 import sass
 
+with open('cards.yaml') as f:
+    cards = load(f)
 
-UP_REGEX = re.compile(r"\(([^\|]*)\|([^\)]*)\)")
+with open('relics.yaml') as f:
+    relics = load(f)
+
+with open('potions.yaml') as f:
+    potions = load(f)
+
+with open('enemies.yaml') as f:
+    enemies = load(f)
+
+with open('keywords.yaml') as f:
+    keywords = load(f)
+
+UP_REGEX = re.compile(r"(\([^\|]*\|[^\)]*\))")
+UP_REGEX_SPLIT = re.compile(r"\(([^\|]*)\|([^\)]*)\)")
+KW_REGEX = re.compile('|'.join(keywords))
 
 
 def bg_img(data):
@@ -47,18 +63,33 @@ def card_img(data, name):
         return f"/images/{data['color']}/{data['type']}/{name}.png"
 
 
-def process_text(cost):
-    pass
+def process_card_text(text, color):
+    text = text.replace('\n', '<br>')
+    output = ''
+    for segment in UP_REGEX.split(text):
+        match = UP_REGEX_SPLIT.search(segment)
+        if match:
+            output += env.get_template('card-text-plus.html').render(
+                base=match[1], plus=match[2])
+        else:
+            output += segment
+    output = output.replace(
+        '[orb]',
+        env.get_template('card-text-orb.html').render(color=color))
+    output = KW_REGEX.sub(kw_replace, output)
+    return output
 
 
-def process_cost(cost):
+def process_card_cost(cost):
     if isinstance(cost, int) or cost == 'X':
         return cost
     else:
-        return f"""
-            <tspan class="base">{cost[1]}</tspan>
-            <tspan class="plus">{cost[3]}</tspan>
-        """
+        return env.get_template('card-text-cost.html').render(
+            basecost=cost[1], pluscost=cost[3])
+
+
+def kw_replace(match):
+    return env.get_template('card-text-keyword.html').render(keyword=match[0])
 
 
 env = Environment(trim_blocks=True,
@@ -69,22 +100,9 @@ env.filters['orb_img'] = orb_img
 env.filters['banner_img'] = banner_img
 env.filters['frame_img'] = frame_img
 env.filters['card_img'] = card_img
-env.filters['card_text'] = process_text
-env.filters['card_cost'] = process_cost
+env.filters['card_text'] = process_card_text
+env.filters['card_cost'] = process_card_cost
 env.filters['titlecase'] = lambda x: x.title()
-
-
-with open('cards.yaml') as f:
-    cards = load(f)
-
-with open('relics.yaml') as f:
-    relics = load(f)
-
-with open('potions.yaml') as f:
-    potions = load(f)
-
-with open('enemies.yaml') as f:
-    enemies = load(f)
 
 env.get_template('index.html').stream().dump('docs/index.html')
 env.get_template('cards.html').stream(cards=cards).dump('docs/cards.html')

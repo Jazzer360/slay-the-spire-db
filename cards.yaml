@@ -181,7 +181,7 @@ True Grit: {
   color: red,
   cost: 1,
   rarity: common,
-  text: "Gain (7|9) Block.\nExhaust 1 card(| at random).",
+  text: "Gain (7|9) Block.\nExhaust 1 card( at random|).",
   type: skill,
   keywords: [block, exhaust, random]
 }
@@ -228,7 +228,7 @@ Blood for Blood: {
   color: red,
   cost: (4|3),
   rarity: uncommon,
-  text: "Costs 1 less [red orb] for each time you lose HP this combat.\nDeal (18|22) damage.",
+  text: "Costs 1 less [orb] for each time you lose HP this combat.\nDeal (18|22) damage.",
   type: attack,
   keywords: [damage]
 }
@@ -237,7 +237,7 @@ Bloodletting: {
   color: red,
   cost: 0,
   rarity: uncommon,
-  text: "Lose 3 HP.\nGain [red orb](|[red orb]).",
+  text: "Lose 3 HP.\nGain [orb](|[orb]).",
   type: skill,
   keywords: [energy, self-harm]
 }
@@ -291,7 +291,7 @@ Dropkick: {
   color: red,
   cost: 1,
   rarity: uncommon,
-  text: "Deal (5|8) damage.\nIf the enemy has Vulnerable, gain [red orb] and draw 1 card.",
+  text: "Deal (5|8) damage.\nIf the enemy has Vulnerable, gain [orb] and draw 1 card.",
   type: attack,
   keywords: [damage, vulnerable, draw, energy]
 }
@@ -480,7 +480,7 @@ Seeing Red: {
   color: red,
   cost: (1|0),
   rarity: uncommon,
-  text: "Gain [red orb][red orb].\nExhaust.",
+  text: "Gain [orb][orb].\nExhaust.",
   type: skill,
   keywords: [exhaust, energy]
 }
@@ -489,7 +489,7 @@ Sentinel: {
   color: red,
   cost: 1,
   rarity: uncommon,
-  text: "Gain (5|8) Block.\nIf this card is Exhausted, gain [red orb][red orb](|[red orb]).",
+  text: "Gain (5|8) Block.\nIf this card is Exhausted, gain [orb][orb](|[orb]).",
   type: skill,
   keywords: [block, exhaust, energy]
 }
@@ -554,7 +554,7 @@ Berserk: {
   color: red,
   cost: 0,
   rarity: rare,
-  text: "Gain (2|1) Vulnerable.\nAt the start of your turn, gain [red orb].",
+  text: "Gain (2|1) Vulnerable.\nAt the start of your turn, gain [orb].",
   type: power,
   keywords: [energy, self-debuff]
 }
@@ -671,7 +671,7 @@ Offering: {
   color: red,
   cost: 0,
   rarity: rare,
-  text: "Lose 6 HP.\nGain [red orb][red orb].\nDraw (3|5) cards.\nExhaust.",
+  text: "Lose 6 HP.\nGain [orb][orb].\nDraw (3|5) cards.\nExhaust.",
   type: skill,
   keywords: [self-harm, energy, draw, exhaust]
 }

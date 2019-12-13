@@ -34,7 +34,7 @@ body
     left: 0
     max-width: 100%
 
-  img, p
+  img, p, svg, div
     position: absolute
 
   svg
@@ -43,7 +43,6 @@ body
     width: 100%
     height: 100%
     z-index: 10
-    position: absolute
 
 .orb
   width: 23.411%
@@ -86,18 +85,46 @@ body
   .cost .plus, .name
     fill: #7FFF00
     stroke: #2C5900
+  .plus.number
+    color: #7FFF00
 
 .type
   top: 52.5%
   width: 100%
-  font-weight: 800
+  font-weight: 700
   color: #595959
   font-size: 11px
   text-align: center
   z-index: 10
 
   .skill &
-    top: 53%
+    top: 53.3%
 
   .power &
     top: 52%
+
+.cardtext
+  top: 57%
+  height: 35%
+  width: 100%
+  display: flex
+  align-items: center
+  justify-content: center
+
+.text
+  font-size: 14px
+  line-height: 15px
+  font-weight: 300
+  letter-spacing: 1px
+  padding: 0 12%
+  text-align: center
+
+.text-orb
+  position: relative !important
+  top: -2px
+  left: 0
+  margin: 0 1px 
+  height: 14px
+
+.keyword
+  color: #EFC851
