@@ -1,23 +1,23 @@
 import re
 
 from jinja2 import Environment, FileSystemLoader
-from yaml import load
+import yaml
 import sass
 
 with open('cards.yaml') as f:
-    cards = load(f)
+    cards = yaml.load(f, Loader=yaml.FullLoader)
 
 with open('relics.yaml') as f:
-    relics = load(f)
+    relics = yaml.load(f, Loader=yaml.FullLoader)
 
 with open('potions.yaml') as f:
-    potions = load(f)
+    potions = yaml.load(f, Loader=yaml.FullLoader)
 
 with open('enemies.yaml') as f:
-    enemies = load(f)
+    enemies = yaml.load(f, Loader=yaml.FullLoader)
 
 with open('keywords.yaml') as f:
-    keywords = load(f)
+    keywords = yaml.load(f, Loader=yaml.FullLoader)
 
 UP_REGEX = re.compile(r"(\([^\|]*\|[^\)]*\))")
 UP_REGEX_SPLIT = re.compile(r"\(([^\|]*)\|([^\)]*)\)")
