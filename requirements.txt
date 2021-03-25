@@ -1,5 +1,5 @@
 Jinja2==2.10.3
 libsass==0.19.4
 MarkupSafe==1.1.1
-PyYAML==5.2
+PyYAML==5.4
 six==1.13.0
